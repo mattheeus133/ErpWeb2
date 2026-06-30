@@ -1,0 +1,60 @@
+import { Link } from 'react-router-dom'
+import styled from 'styled-components'
+import logo from '../assets/images/LogoErp.png'
+//import App from '../App.css'
+
+
+const Cabecalho = styled.header`
+    border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    background: #2e2e2d;
+    
+` 
+const Img = styled.img`
+    width: 100%;
+`
+const Ul = styled.ul`
+    
+`
+const Li = styled.li`
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    background: #2e2e2d;
+
+
+    &:hover{
+         font-weight: bold;
+        cursor: pointer;
+        border: 1px solid white;
+        border-radius: 20px;
+    }
+`
+
+function Header(){
+    return(
+        <Cabecalho>
+            <div>
+                <Img src= {logo} alt='Logo' /> {/*Colocar imagem logo*/}
+            </div>
+       
+           
+            <Ul>
+                <Li><Link to={"/app"}  className="block w-full h-full">Home</Link></Li>
+                <Li><Link to={"/app/estoque"}  class="block w-full h-40 bg-red-500">Estoque</Link></Li>
+                <Li><Link to={"/app/cadastro"} className="block w-full h-full">Cadastro Cliente</Link></Li>
+                <Li><Link to={"/app/fornecedor"} className="block w-full h-full">Fornecedor</Link></Li>
+                <Li>Compras</Li>
+                <Li>Vendas</Li>
+                <Li>Saida</Li>
+                <Li>Movimentação</Li>
+                <Li>Inventario</Li>
+                <Li><Link to={"/"} className="block w-full h-full">Sair</Link></Li>
+            </Ul>
+         </Cabecalho>
+    )
+}
+
+export default Header
