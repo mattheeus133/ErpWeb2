@@ -43,7 +43,7 @@ function Header(){
            
             <Ul>
                 <Li><Link to={"/app"}  className="block w-full h-full">Home</Link></Li>
-                <Li><Link to={"/app/estoque"}  class="block w-full h-40 bg-red-500">Estoque</Link></Li>
+                <Li><Link to={"/app/estoque"}  class="block w-full h-full">Estoque</Link></Li>
                 <Li><Link to={"/app/cadastro"} className="block w-full h-full">Cadastro Cliente</Link></Li>
                 <Li><Link to={"/app/fornecedor"} className="block w-full h-full">Fornecedor</Link></Li>
                 <Li>Compras</Li>
