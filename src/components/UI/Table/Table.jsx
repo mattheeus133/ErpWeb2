@@ -3,6 +3,23 @@ import {BtnDelet, BtnEdit} from "../../../utils/Icon"
 import {ButtonDeleteLinha, ButtonEditLinha} from "../Button/Button"
 
 export function Table({ columns, data }) {
+
+  async function excluirProduto(id) {
+
+    console.log("ID", id);
+
+    const response = await fetch(
+        `http://localhost:5000/api/Product/${id}`,
+        {
+            method: "DELETE",
+        }
+    );
+
+    if (response.ok) {
+        setProdutos(produtos.filter((p) => p.id !== id));
+    }
+}
+  
   return (
     <StyledTable>
       <StyledTHead>
@@ -28,7 +45,7 @@ export function Table({ columns, data }) {
             ))}
 
             <StyledTd>
-             <ButtonDeleteLinha> {BtnDelet} </ButtonDeleteLinha>
+             <ButtonDeleteLinha onClick={() => excluirProduto(item.id)}> {BtnDelet} </ButtonDeleteLinha>
            <ButtonEditLinha>{BtnEdit}</ButtonEditLinha>
             </StyledTd>
           </StyledTr>
