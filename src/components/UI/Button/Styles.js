@@ -23,3 +23,10 @@ export const StyledButtonEdit = styled.button`
     border: 1px solid green;
     padding: 5px;
 `
+export const StyledButtonCadProduto = styled.button`
+    margin-left: 5%;
+    border-radius: 8px;
+    border: 2px solid #536DFE;
+    width: 200px;
+    cursor: pointer;
+`

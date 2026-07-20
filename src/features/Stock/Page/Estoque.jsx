@@ -1,10 +1,12 @@
 import styled from "styled-components"
-import { Input } from "../../../components/UI/Input/Input"
-import { ButtonBuscar } from "../../../components/UI/Button/Button"
+import { InputBusca } from "../../../components/UI/Input/Input"
+import { ButtonBuscar, ButtonCadProduto } from "../../../components/UI/Button/Button"
 import {  Table } from "../../../components/UI/Table/Table"
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef} from "react"
 import { Label } from "../../../components/UI/Input/styles"
- 
+import { Modal } from "../../../components/UI/Modal/initModal"
+import { CadProduto } from "./CadastroProduto" 
+
 const Pesquisa = styled.div`
     border: 1px solid red;
     height: 20vh;
@@ -14,14 +16,24 @@ const Pesquisa = styled.div`
 const Main = styled.div`
     position: relative;
     border: 1px solid green;
-    height: 70vh;
+    height: 60vh;
     top: 50%;
 `
-
+const DivBtn = styled.div`
+    border: 1px solid black;
+    height: 50px;
+    position: relative;
+    top: 50%;
+    display: flex;
+    align-items: center;
+ `
 
 function Stock() {
 
+    const [open, setOpen] = useState(false);
+
     const [produtos, setProdutos] = useState([]);
+
 
     useEffect(() => {
         async function carregarProdutos(){
@@ -35,6 +47,7 @@ function Stock() {
         }
         carregarProdutos();
     }, []);
+
 
     const columns = [
         {
@@ -53,7 +66,7 @@ function Stock() {
 
     return(
         <Pesquisa>
-            <Input
+            <InputBusca
                 label="Pesquisa de Estoque"
                 placeholder="Codigo do Produto"
             />
@@ -69,6 +82,17 @@ function Stock() {
                 />               
             </Main>
 
+        <DivBtn>
+        <ButtonCadProduto onClick = {() => {
+            console.log("Cliquei") 
+            setOpen(true)}}>
+            + Cadastra
+        </ButtonCadProduto>
+        </DivBtn>
+
+        <Modal isOpen={open} onClose={() => setOpen(false)}>
+            <CadProduto/>
+        </Modal>
         </Pesquisa>
     )
 }

@@ -1,4 +1,4 @@
-import { StyledButton, StyledButtonDelete, StyledButtonEdit } from "./Styles"
+import { StyledButton, StyledButtonDelete, StyledButtonEdit, StyledButtonCadProduto } from "./Styles"
 
 export function ButtonBuscar ({children, ...props}){
     return(
@@ -21,5 +21,13 @@ export function ButtonEditLinha ({children, ...props}){
        <StyledButtonEdit {...props}>
         {children}
        </StyledButtonEdit>
+    )
+}
+
+export function ButtonCadProduto ({children, ...props}){
+    return(
+        <StyledButtonCadProduto {...props}>
+            {children}
+        </StyledButtonCadProduto>
     )
 }

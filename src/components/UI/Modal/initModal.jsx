@@ -1,0 +1,47 @@
+import styled from "styled-components";
+
+export function Modal({isOpen, onClose, children}) {
+    if (!isOpen) return null;
+
+    return (
+            <Overlay onClick={onClose}>
+                <Modall onClick={(e) => e.stopPropagation()}>
+                    {children}
+                    <BtnClose onClick={onClose}>X</BtnClose>
+                        
+                </Modall>
+            </Overlay>
+    )
+}
+
+const Overlay = styled.div`
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-Content: center;
+    align-Items: center;
+`
+const Modall = styled.div`
+    position: relative;
+    background: #858282;
+    width: 618px;
+    height: 400px;
+    padding: 20px;
+    border-Radius: 10px;
+    min-Width: 300px;
+`
+const BtnClose = styled.button`
+    position: absolute;
+    color: white;
+    width: 40px;
+    height: 40px;
+    top: 20px;
+    left: 90%;
+    background: none;
+    font-size: 2rem;
+    border: none;
+`

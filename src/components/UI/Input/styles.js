@@ -7,11 +7,10 @@ export const Container = styled.div`
 `;
 
 export const Label = styled.label`
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 500;
   margin-left: 10px;
-  font-size: 20px;
-`;
+ `
 
 export const StyledInput = styled.input`
   padding: 10px;
@@ -20,3 +19,18 @@ export const StyledInput = styled.input`
   border-radius: 6px;
   margin-left: 10px;
 `;
+
+export const StyledInputModal = styled.input`
+    width: 231px;
+    height: 20px;
+    border-radius: 5px;
+    border: 3px solid white;
+    background: none;
+    color: white;
+`;
+
+export const LabelModal = styled.label`
+   font-size: 15px;
+  font-weight: 500;
+  margin-left: 10px;
+`

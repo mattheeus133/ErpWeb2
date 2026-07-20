@@ -1,6 +1,6 @@
-import { StyledInput, Container, Label } from "./styles";
+import { StyledInput, StyledInputModal, Container, Label, LabelModal } from "./styles";
 
-export function Input({
+export function InputBusca({
   label,
   ...props
 }) {
@@ -11,4 +11,17 @@ export function Input({
       <StyledInput {...props} />
     </Container>
   );
+}
+
+export function InputModal ({
+  label, 
+  ...props
+}){
+  return(
+    <>
+    {label && <LabelModal>{label}</LabelModal>}
+
+      <StyledInputModal {...props}/>
+    </>
+  )
 }
