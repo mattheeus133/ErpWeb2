@@ -61,7 +61,12 @@ function Stock() {
         {
             key: "estoqueAtual",
             label: "Estoque Atual"
+        },
+        {
+            key: "estoqueMinimo",
+            label: "Estoque Minimo"
         }
+
     ]
 
     return(

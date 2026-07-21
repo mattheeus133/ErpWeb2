@@ -7,6 +7,17 @@ const MainModal = styled.form`
     flex-direction: column;
 `
 
+const BtnCad = styled.button` //temporario colocar na pasta button
+    width: 100px;
+    border: 5px solid black;
+    margin-top:10px;
+    &:hover{
+        background: green;
+        color: white;
+    }
+
+`
+
 export function CadProduto() {
 
            const [nome, setNome] = useState("");
@@ -79,7 +90,7 @@ export function CadProduto() {
                 onChange={(e) => setEstoqueMinimo(e.target.value)}
             />
 
-            <button type="submit" onClick={() => console.log("Cliquei")}>Cadastra</button>
+            <BtnCad type="submit" onClick={() => console.log("Cliquei")}>Cadastra</BtnCad>
         </MainModal>
         </>
     )
