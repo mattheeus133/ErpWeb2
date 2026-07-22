@@ -40,7 +40,15 @@ export function Table({ columns, data }) {
           <StyledTr key={item.codigo}>
             {columns.map((column) => (
               <StyledTd key={column.key} className={`col-${column.key}`}>
-                {item[column.key]}
+                {column.key === "estoqueMinimo" ?  (
+                  <span style={{ color: item.estoqueAtual <= item.estoqueMinimo ? "red" : "green" }}>
+                    {item.estoqueMinimo}
+                  </span>
+                ):(
+                
+                item[column.key]
+                
+                )}
               </StyledTd>
             ))}
 
