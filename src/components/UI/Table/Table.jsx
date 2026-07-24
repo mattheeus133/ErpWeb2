@@ -41,7 +41,7 @@ export function Table({ columns, data }) {
             {columns.map((column) => (
               <StyledTd key={column.key} className={`col-${column.key}`}>
                 {column.key === "estoqueMinimo" ?  (
-                  <span style={{ color: item.estoqueAtual <= item.estoqueMinimo ? "red" : "green" }}>
+                  <span style={{ color: item.estoqueAtual <= item.estoqueMinimo ? "red" : "black" }}>
                     {item.estoqueMinimo}
                   </span>
                 ):(
